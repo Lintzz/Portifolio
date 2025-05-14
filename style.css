@@ -35,7 +35,7 @@ body{
   display: flex;
   gap: 40px;
   align-items: center;
-  margin: 0 auto; 
+  margin-left: 40px;
   overflow: hidden;
 }
 
@@ -69,7 +69,9 @@ h4{
     font-weight: 650;
 }
 
-
+p{
+    text-align: justify;
+}
 
 svg{
     color: var(--cor-branco);
@@ -115,8 +117,8 @@ svg{
 /* ASIDE */
 aside{
     max-width: 300px;
-    height: calc(100vh - 160px); 
-    margin: 80px 0;
+    height: calc(100vh - 80px); 
+    margin: 40px 0;
     background-color: var(--cor-aside);
     border: 1px solid;
     border-color: var(--cor-borda);
@@ -233,12 +235,21 @@ aside{
     flex: 1;
     overflow-y: auto;
     height: 100vh ; 
-    margin-top: 0px;
     scroll-behavior: smooth;
     scrollbar-width: none;   
     -ms-overflow-style: none;   
-    background-color: var(--cor-fundo);
-    max-width: 990px;
+}
+
+main::before {
+    content: "";
+    position: fixed;
+    top: 90px;
+    left: 380px;
+    width: 1000px;
+    height: 50px; 
+    background: linear-gradient(to bottom, var(--cor-fundo), transparent);
+    pointer-events: none;
+    z-index: 2;
 }
 
 .content::-webkit-scrollbar {
@@ -262,11 +273,14 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: transparent;
+    background-color: var(--cor-fundo);
     position: sticky;
-    top: 80px;
-    z-index: 10; 
+    top: 0px;
+    padding-top: 40px;
+    z-index: 3;
+    width: calc(100vw - 420px); 
 }
+
 
 .navbar-container{
     display: flex;
@@ -532,6 +546,7 @@ header{
 
 .resumoSec {
     padding-top: 105px;
+    width: 990px;
 }
 
 .resumo-container{
@@ -773,7 +788,9 @@ textarea {
     margin-right: 100px;
 }
 
-
+footer{
+    width: 990px;
+}
 
 .hidden {
     opacity: 0;
@@ -807,9 +824,6 @@ textarea {
         gap: 0px;
     }
 
-    header{
-        padding-bottom: 170px;
-    }
 
     .logo img{
         max-width: 50px;
@@ -833,35 +847,13 @@ textarea {
         font-size:10px;
     }
 
-    .content{
-        padding-top: 40px; 
+    main::before {
+        left: 340px;
     }
-        
+            
 }
 
 @media (max-width: 1440px) {
-    .topside{
-        gap: 10px;
-    }
-
-    .avatar{
-        margin-bottom: 20px;
-    }
-
-    .profile-details{
-        gap: 20px;
-    }
-
-    header{
-        padding-bottom: 250px;
-    }
-
-    .profile-details p{ 
-        font-size: 16px;
-    }
-
-    .user-info{
-        font-size:14px;
-    }
+    
     
 }
